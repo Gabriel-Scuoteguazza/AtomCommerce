@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atom Commerce | Cadastro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="site-header container">
+    <a class="brand" href="index.html">Atom<span>Commerce</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="atomos.html">Átomos cadastrados</a>
+    </nav>
+  </header>
+
+  <main class="container page-content">
+    <section class="section-head">
+      <p class="kicker">Cadastro (Z)</p>
+      <h1>Novo átomo</h1>
+      <p>Preencha os campos para registrar um novo átomo no catálogo.</p>
+    </section>
+
+    <section class="card form-wrap">
+      <form id="atom-form" novalidate>
+        <label for="name">Nome do átomo</label>
+        <input id="name" name="name" type="text" placeholder="Ex.: Oxigênio" required>
+
+        <label for="z">Número atômico (Z)</label>
+        <input id="z" name="z" type="number" min="1" step="1" placeholder="Ex.: 8" required>
+
+        <label for="mass">Massa atômica</label>
+        <input id="mass" name="mass" type="number" min="0" step="0.0001" placeholder="Ex.: 15.999" required>
+
+        <label for="symbol">Símbolo</label>
+        <input id="symbol" name="symbol" type="text" maxlength="3" placeholder="Ex.: O" required>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Salvar átomo</button>
+          <a class="btn btn-ghost" href="atomos.html">Ir para listagem</a>
+        </div>
+      </form>
+      <p id="form-message" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+</body>
+</html>
