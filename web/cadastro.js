@@ -16,7 +16,7 @@ async function enviarInformacoes() {
         return
     }
 
-    const user = {
+    const atom = {
         name,
         z,
         mass,
@@ -28,7 +28,7 @@ async function enviarInformacoes() {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ user })
+        body: JSON.stringify({ atom })
 
     }).then(response => response.json())
 

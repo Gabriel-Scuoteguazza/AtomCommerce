@@ -9,11 +9,20 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (request, response) => {
-    response.json({ message: "API rodando" })
+    const selectCommand = "SELECT * FROM atomCommerce"
+
+    database.query(selectCommand, (error, atom) => {
+        if (error) {
+            console.log(error)
+            return
+        }
+
+        response.json(atom)
+    })
 })
 
 app.post("/cadastrar", (request, response) => {
-    const { name, z, mass, symbol } = request.body.user
+    const { name, z, mass, symbol } = request.body.atom
 
     const insertCommand = ` 
     INSERT INTO atomCommerce(name, z, mass, symbol)
@@ -29,7 +38,7 @@ app.listen (port, () => {
 })
 
 const database = mysql.createPool({
-    host: "benserveplex.ddns.net",
+    host: "benserverplex.ddns.net",
     user: "alunos",
     password:"senhaAlunos",
     database: "web_03ta",
