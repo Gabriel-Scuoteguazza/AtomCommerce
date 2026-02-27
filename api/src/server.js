@@ -33,6 +33,24 @@ app.post("/cadastrar", (request, response) => {
     response.status(201).json({ message: "Usuário cadastrado com sucesso"})
 })
 
+app.delete("/atomos/:z", (request, response) => {
+    const { z } = request.params
+    const deleteCommand = "DELETE FROM atomCommerce WHERE z = ?"
+
+    database.query(deleteCommand, [z], (error, result) => {
+        if (error) {
+            console.log(error)
+            return response.status(500).json({ message: "Erro ao remover atomo" })
+        }
+
+        if (!result.affectedRows) {
+            return response.status(404).json({ message: "Atomo nao encontrado" })
+        }
+
+        response.json({ message: "Atomo removido com sucesso" })
+    })
+})
+
 app.listen (port, () => {
     console.log(`Servidor rodando na porta ${port}!`)
 })

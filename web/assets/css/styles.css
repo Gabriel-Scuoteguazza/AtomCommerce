@@ -262,6 +262,29 @@ input:focus {
   background: linear-gradient(130deg, var(--primary), var(--accent));
 }
 
+.atom-footer {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.atom-remove-btn {
+  border: 1px solid rgba(255, 107, 143, 0.55);
+  background: rgba(255, 107, 143, 0.12);
+  color: #ffd2de;
+  border-radius: 8px;
+  padding: 0.42rem 0.68rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.atom-remove-btn:hover {
+  background: rgba(255, 107, 143, 0.2);
+}
+
 .empty-state {
   color: var(--muted);
   padding: 1rem 0;
